@@ -10,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.finder.gettingstarted.gettingstarted.RecyclerView.CardViewDemoActivity;
 import com.finder.gettingstarted.gettingstarted.designLibrary.NavigationActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -54,6 +55,10 @@ public class MainActivity extends AppCompatActivity {
     }
     public  void startNavigationActivity(View view){
         Intent intent = new Intent(this, NavigationActivity.class);
+        startActivity(intent);
+    }
+    public  void startRecyclerViewActivity(View view){
+        Intent intent = new Intent(this, CardViewDemoActivity.class);
         startActivity(intent);
     }
 }
