@@ -38,7 +38,16 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".RecyclerView.CardViewDemoActivity" />
         <activity android:name=".Maps.MapActivity" />
-        <activity android:name=".bottomNavigation.Main2Activity"></activity>
+        <activity android:name=".bottomNavigation.Main2Activity" />
+        <activity android:name=".Services.MainServiceActivity" />
+
+        <service
+            android:name=".Services.MyService"
+            android:enabled="true"
+            android:exported="false" />
+        <service
+            android:name=".Services.MyIntentService"
+            android:exported="false"></service>
     </application>
 
 </manifest>
