@@ -15,7 +15,6 @@ import com.finder.gettingstarted.gettingstarted.R;
  * Activities that contain this fragment must implement the
  * {@link BlankFragmentOne.OnFragmentInteractionListener} interface
  * to handle interaction events.
- *
  */
 public class BlankFragmentOne extends Fragment {
 
@@ -62,7 +61,7 @@ public class BlankFragmentOne extends Fragment {
      * fragment to allow an interaction in this fragment to be communicated
      * to the activity and potentially other fragments contained in that
      * activity.
-     * <p>
+     * <p/>
      * See the Android Training lesson <a href=
      * "http://developer.android.com/training/basics/fragments/communicating.html"
      * >Communicating with Other Fragments</a> for more information.

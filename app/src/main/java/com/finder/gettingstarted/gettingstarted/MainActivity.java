@@ -10,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.finder.gettingstarted.gettingstarted.Maps.MapActivity;
 import com.finder.gettingstarted.gettingstarted.RecyclerView.CardViewDemoActivity;
 import com.finder.gettingstarted.gettingstarted.designLibrary.NavigationActivity;
 
@@ -23,13 +24,15 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        if (fab != null) {
+            fab.setOnClickListener(new View .OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+                }
+            });
+        }
     }
 
     @Override
@@ -59,6 +62,10 @@ public class MainActivity extends AppCompatActivity {
     }
     public  void startRecyclerViewActivity(View view){
         Intent intent = new Intent(this, CardViewDemoActivity.class);
+        startActivity(intent);
+    }
+    public void startGoogleMapActivity(View view){
+        Intent intent = new Intent(this, MapActivity.class);
         startActivity(intent);
     }
 }
