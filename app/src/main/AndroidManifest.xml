@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.finder.gettingstarted.gettingstarted">
+    package="in.finder.gettingstarted">
 
     <uses-feature
         android:glEsVersion="0x00020000"
@@ -33,12 +33,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".designLibrary.NavigationActivity"
+            android:name=".designlibrary.NavigationActivity"
             android:label="@string/title_activity_navigation"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".RecyclerView.CardViewDemoActivity" />
         <activity android:name=".Maps.MapActivity" />
-        <activity android:name=".bottomNavigation.Main2Activity" />
         <activity android:name=".Services.MainServiceActivity" />
 
         <service
@@ -47,6 +46,13 @@
             android:exported="false" />
         <service
             android:name=".Services.MyIntentService"
+            android:exported="false" />
+
+        <activity android:name=".Services.BoundServiceActivity" />
+
+        <service
+            android:name=".Services.MyBoundService"
+            android:enabled="false"
             android:exported="false"></service>
     </application>
 

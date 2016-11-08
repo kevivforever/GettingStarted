@@ -11,7 +11,7 @@
     android:id="@+id/content"
     android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.finder.gettingstarted.gettingstarted.DisplayMessageActivity"
+    tools:context="com.finder.gettingstartedDisplayMessageActivity"
     tools:showIn="@layout/activity_display_message">
 
 </LinearLayout>
