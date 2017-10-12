@@ -20,17 +20,20 @@ import android.view.MenuItem;
 import java.util.ArrayList;
 import java.util.List;
 
+import in.finder.gettingstarted.Maps.MapActivity;
 import in.finder.gettingstarted.R;
+import in.finder.gettingstarted.RecyclerView.CardViewDemoActivity;
 
 
-public class NavigationActivity extends AppCompatActivity
+public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout mDrawer;
     private ViewPager viewPager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_navigation);
+        setContentView(R.layout.activity_main);
         Intent intent = getIntent();
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.mToolbar);
@@ -49,14 +52,14 @@ public class NavigationActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        viewPager = (ViewPager)findViewById(R.id.tab_viewpager);
-        if (viewPager !=null){
+        viewPager = (ViewPager) findViewById(R.id.tab_viewpager);
+        if (viewPager != null) {
             setupViewPager(viewPager);
         }
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabLayout);
         tabLayout.setupWithViewPager(viewPager);
-        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener(){
+        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
 
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
@@ -76,7 +79,7 @@ public class NavigationActivity extends AppCompatActivity
 
     }
 
-    private void setupViewPager(ViewPager viewPager){
+    private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFrag(new FloatingLabelsFragment(), "Floating Labels");
         adapter.addFrag(new FABLayoutFragment(), "FAB");
@@ -90,7 +93,7 @@ public class NavigationActivity extends AppCompatActivity
         private final List<Fragment> mFragmentList = new ArrayList<>();
         private final List<String> mFragmentTitleList = new ArrayList<>();
 
-        public ViewPagerAdapter(FragmentManager manager){
+        public ViewPagerAdapter(FragmentManager manager) {
             super(manager);
         }
 
@@ -104,13 +107,13 @@ public class NavigationActivity extends AppCompatActivity
             return mFragmentList.size();
         }
 
-        public void addFrag(Fragment fragment, String title){
+        public void addFrag(Fragment fragment, String title) {
             mFragmentList.add(fragment);
             mFragmentTitleList.add(title);
         }
 
         @Override
-        public CharSequence getPageTitle(int position){
+        public CharSequence getPageTitle(int position) {
             return mFragmentTitleList.get(position);
         }
     }
@@ -123,6 +126,7 @@ public class NavigationActivity extends AppCompatActivity
         } else {
             super.onBackPressed();
         }
+        finishAffinity();
     }
 
     @Override
@@ -153,10 +157,10 @@ public class NavigationActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
+        if (id == R.id.nav_map) {
+            startActivity(new Intent(this, MapActivity.class));
+        } else if (id == R.id.nav_cardview_demo) {
+            startActivity(new Intent(this, CardViewDemoActivity.class));
         } else if (id == R.id.nav_slideshow) {
 
         } else if (id == R.id.nav_manage) {

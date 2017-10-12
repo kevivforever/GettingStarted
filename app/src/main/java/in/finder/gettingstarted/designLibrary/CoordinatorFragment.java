@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import in.finder.gettingstarted.R;
+import in.finder.gettingstarted.utils.VersionModel;
 
 /**
  * Created by rufflez on 6/21/15.

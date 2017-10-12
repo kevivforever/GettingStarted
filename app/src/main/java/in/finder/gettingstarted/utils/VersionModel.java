@@ -1,4 +1,4 @@
-package in.finder.gettingstarted.designlibrary;
+package in.finder.gettingstarted.utils;
 
 /**
  * Created by keviv on 14/02/2016.
