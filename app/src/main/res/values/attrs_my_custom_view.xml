@@ -1,0 +1,5 @@
+<resources>
+    <declare-styleable name="MyCustomView">
+        <attr name="square_color" format="color"/>
+    </declare-styleable>
+</resources>
