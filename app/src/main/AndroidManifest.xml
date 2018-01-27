@@ -28,7 +28,7 @@
             android:value="AIzaSyBmdxwUhv_ydA0gDMc0MndxWyunDoe330s" />
 
         <activity
-            android:name=".designlibrary.MainActivity"
+            android:name=".Views.MainActivity"
             android:label="@string/title_activity_navigation"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -37,9 +37,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RecyclerView.CardViewDemoActivity" />
-        <activity android:name=".Maps.MapActivity" >
-            </activity>
+
         <activity android:name=".Services.MainServiceActivity" />
 
         <service
@@ -51,6 +49,7 @@
             android:exported="false" />
 
         <activity android:name=".Services.BoundServiceActivity" />
+        <activity android:name=".Views.BaseActivity" />
 
         <service
             android:name=".Services.MyBoundService"
