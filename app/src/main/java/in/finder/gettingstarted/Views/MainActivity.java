@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -35,11 +36,10 @@ public class MainActivity extends BaseActivity {
         ab.setHomeAsUpIndicator(R.drawable.ic_menu);
         ab.setDisplayHomeAsUpEnabled(true);
 
-//        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-//                this, mDrawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-//        mDrawer.setDrawerListener(toggle);
-//        toggle.syncState();
-
+        mActionBarDrawerToggle = new ActionBarDrawerToggle(
+                this, mDrawerlayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        mDrawerlayout.addDrawerListener(mActionBarDrawerToggle);
+        mActionBarDrawerToggle.syncState();
 
         mViewPager = findViewById(R.id.main_tab_viewpager);
         if (mViewPager != null) {
@@ -68,6 +68,12 @@ public class MainActivity extends BaseActivity {
 
     }
 
+    @Override
+    protected boolean useDrawerToggle() {
+        return false;
+    }
+
+    @Override
     protected boolean useToolbar() {
         return false;
     }

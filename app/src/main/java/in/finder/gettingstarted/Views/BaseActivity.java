@@ -19,12 +19,12 @@ import in.finder.gettingstarted.R;
  * Created by keviv on 24/01/2018.
  */
 
-public class BaseActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public abstract class BaseActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     public DrawerLayout mDrawerlayout;
     private NavigationView mNavigationView;
     private Toolbar mToolbar;
-    private ActionBarDrawerToggle mActionBarDrawerToggle;
+    public ActionBarDrawerToggle mActionBarDrawerToggle;
 
     @Override
     public void setContentView(int layoutResID) {
@@ -61,13 +61,9 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
 
     }
 
-    protected boolean useDrawerToggle() {
-        return true;
-    }
+    protected abstract boolean useDrawerToggle();
 
-    protected boolean useToolbar() {
-        return true;
-    }
+    protected abstract boolean useToolbar();
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
@@ -99,12 +95,16 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
-        mActionBarDrawerToggle.syncState();
+        if(useDrawerToggle()) {
+            mActionBarDrawerToggle.syncState();
+        }
     }
 
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
-        mActionBarDrawerToggle.onConfigurationChanged(newConfig);
+        if(useDrawerToggle()) {
+            mActionBarDrawerToggle.onConfigurationChanged(newConfig);
+        }
     }
 }

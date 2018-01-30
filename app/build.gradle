@@ -11,10 +11,10 @@ android {
         versionCode 1
         versionName "1.0"
         multiDexEnabled true
-        compileOptions {
-            sourceCompatibility JavaVersion.VERSION_1_8
-            targetCompatibility JavaVersion.VERSION_1_8
-        }
+//        compileOptions {
+//            sourceCompatibility JavaVersion.VERSION_1_8
+//            targetCompatibility JavaVersion.VERSION_1_8
+//        }
     }
     buildTypes {
         release {
@@ -52,6 +52,7 @@ dependencies {
 
     //Glide
     compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.squareup.picasso:picasso:2.5.2'
 
     compile 'com.roughike:bottom-bar:2.3.1'
     testCompile 'junit:junit:4.12'

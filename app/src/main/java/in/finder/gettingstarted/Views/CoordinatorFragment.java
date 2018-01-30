@@ -76,7 +76,12 @@ public class CoordinatorFragment extends Fragment {
 //                    Snackbar.make(v, getValueAt(position), Snackbar.LENGTH_SHORT).show();
 //                }
 //            });
-            holder.mView.setOnClickListener(v -> Snackbar.make(v, getValueAt(position), Snackbar.LENGTH_SHORT).show());
+            holder.mView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Snackbar.make(v, getValueAt(position), Snackbar.LENGTH_SHORT).show();
+                }
+            });
         }
 
         @Override

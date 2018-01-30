@@ -29,7 +29,6 @@
 
         <activity
             android:name=".Views.MainActivity"
-            android:label="@string/title_activity_navigation"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -49,7 +48,6 @@
             android:exported="false" />
 
         <activity android:name=".Services.BoundServiceActivity" />
-        <activity android:name=".Views.BaseActivity" />
 
         <service
             android:name=".Services.MyBoundService"
