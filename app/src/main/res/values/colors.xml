@@ -2,13 +2,20 @@
 <resources>
     <color name="colorPrimary">#03a9f4</color>
     <color name="colorPrimaryDark">#0288d1</color>
-    <color name="colorAccent">#88c64c</color>
+    <color name="colorAccent">#00B482</color>
     <color name="colorWhite">#fff</color>
-
-    <color name="orange">#FF3909</color>
-    <color name="colorAccentDark">#00B482</color>
+    <color name="colorBlackOverlay">#66000000</color>
+    <color name="colorTextPrimary">#363233</color> //aubergine
+    <color name="colorTextSecondary">#616161</color> // grey 700
     <color name="colorGreyDark">#555555</color>
     <color name="colorGrey">#777777</color>
     <color name="colorGreyLight">#bbbbbb</color>
+    <color name="grey_400">#BDBDBD</color>
+    <color name="grey_300">#e0e0e0</color>
+    <color name="alice_blue">#e4f1fe</color>
+    <color name="persian_green">#00A896</color>
+    <color name="zomato_red">#a40100</color>
+    <color name="orange">#FF3909</color>
+    <color name="colorAccentDark">#00B482</color>
 
 </resources>

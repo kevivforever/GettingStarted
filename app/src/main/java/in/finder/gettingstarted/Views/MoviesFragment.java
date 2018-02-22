@@ -28,17 +28,18 @@ import static in.finder.gettingstarted.Network.MovieDBApiClient.API_KEY;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class TopRatedMoviesFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
+public class MoviesFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
 
-    @BindView(R.id.top_rated_movies_rv)
+
+    @BindView(R.id.movies_rv)
     RecyclerView mRecyclerView;
 
-    @BindView(R.id.top_rated_movies_srl)
+    @BindView(R.id.movies_srl)
     SwipeRefreshLayout mSwipeRefreshLayout;
 
     MovieDBApiInterface mMovieDBApiInterface;
 
-    public TopRatedMoviesFragment() {
+    public MoviesFragment() {
         // Required empty public constructor
     }
 
@@ -52,7 +53,7 @@ public class TopRatedMoviesFragment extends Fragment implements SwipeRefreshLayo
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_top_rated_movies, container, false);
+        View view = inflater.inflate(R.layout.fragment_movies, container, false);
         ButterKnife.bind(this, view);
 
         mSwipeRefreshLayout.setOnRefreshListener(this);
@@ -61,12 +62,12 @@ public class TopRatedMoviesFragment extends Fragment implements SwipeRefreshLayo
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         mRecyclerView.addItemDecoration(new Divider(getActivity(), LinearLayoutManager.VERTICAL));
-        getTopRatedMovies();
+        getMovies();
         return view;
     }
 
-    private void getTopRatedMovies() {
-        Call<MovieResponse> call = mMovieDBApiInterface.getTopRatedMovies(API_KEY);
+    private void getMovies() {
+        Call<MovieResponse> call = mMovieDBApiInterface.getMovies(API_KEY);
         call.enqueue(new Callback<MovieResponse>() {
             @Override
             public void onResponse(Call<MovieResponse> call, Response<MovieResponse> response) {
@@ -85,6 +86,7 @@ public class TopRatedMoviesFragment extends Fragment implements SwipeRefreshLayo
     @Override
     public void onRefresh() {
         mSwipeRefreshLayout.setRefreshing(true);
-        getTopRatedMovies();
+        getMovies();
     }
+
 }
