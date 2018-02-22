@@ -17,8 +17,8 @@ import in.finder.gettingstarted.R;
 
 public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MoviesHolder> {
 
-    List<Movie> movieList;
-    Context context;
+    private List<Movie> movieList;
+    private Context context;
 
     public MoviesAdapter(List<Movie> movieList, Context context) {
         this.movieList = movieList;
@@ -27,9 +27,8 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MoviesHold
 
     @Override
     public MoviesHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(context).inflate(R.layout.row_movies,parent,false);
-        MoviesHolder mh = new MoviesHolder(v);
-        return mh;
+        View v = LayoutInflater.from(context).inflate(R.layout.list_item_movies,parent,false);
+        return new MoviesHolder(v);
     }
 
     @Override

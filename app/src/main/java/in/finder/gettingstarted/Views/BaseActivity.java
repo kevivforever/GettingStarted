@@ -71,17 +71,9 @@ public abstract class BaseActivity extends AppCompatActivity implements Navigati
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_map) {
+        if (id == R.id.nav_movie_activity) {
 
-        } else if (id == R.id.nav_cardview_demo) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_github_activity) {
 
         }
 

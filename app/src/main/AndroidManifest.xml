@@ -27,16 +27,7 @@
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyBmdxwUhv_ydA0gDMc0MndxWyunDoe330s" />
 
-        <activity
-            android:name=".Views.MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-
+        <activity android:name=".Views.MovieActivity"></activity>
         <activity android:name=".Services.MainServiceActivity" />
 
         <service
@@ -54,6 +45,12 @@
             android:enabled="false"
             android:exported="false" />
 
+        <activity android:name=".Views.OnBoardingActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
