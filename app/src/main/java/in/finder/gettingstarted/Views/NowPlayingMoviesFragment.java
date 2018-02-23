@@ -28,18 +28,17 @@ import static in.finder.gettingstarted.Network.MovieDBApiClient.API_KEY;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MoviesFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
+public class NowPlayingMoviesFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
 
-
-    @BindView(R.id.movies_rv)
+    @BindView(R.id.nowplaying_movies_rv)
     RecyclerView mRecyclerView;
 
-    @BindView(R.id.movies_srl)
+    @BindView(R.id.nowplaying_movies_srl)
     SwipeRefreshLayout mSwipeRefreshLayout;
 
     MovieDBApiInterface mMovieDBApiInterface;
 
-    public MoviesFragment() {
+    public NowPlayingMoviesFragment() {
         // Required empty public constructor
     }
 
@@ -53,7 +52,7 @@ public class MoviesFragment extends Fragment implements SwipeRefreshLayout.OnRef
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_movies, container, false);
+        View view = inflater.inflate(R.layout.fragment_now_playing_movies, container, false);
         ButterKnife.bind(this, view);
 
         mSwipeRefreshLayout.setOnRefreshListener(this);
@@ -62,12 +61,12 @@ public class MoviesFragment extends Fragment implements SwipeRefreshLayout.OnRef
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         mRecyclerView.addItemDecoration(new Divider(getActivity(), LinearLayoutManager.VERTICAL));
-        getMovies();
+        getNowPlayingMovies();
         return view;
     }
 
-    private void getMovies() {
-        Call<MovieResponse> call = mMovieDBApiInterface.getMovies(API_KEY);
+    private void getNowPlayingMovies() {
+        Call<MovieResponse> call = mMovieDBApiInterface.getNowPlayingMovies(API_KEY);
         call.enqueue(new Callback<MovieResponse>() {
             @Override
             public void onResponse(Call<MovieResponse> call, Response<MovieResponse> response) {
@@ -86,7 +85,7 @@ public class MoviesFragment extends Fragment implements SwipeRefreshLayout.OnRef
     @Override
     public void onRefresh() {
         mSwipeRefreshLayout.setRefreshing(true);
-        getMovies();
+        getNowPlayingMovies();
     }
 
 }
