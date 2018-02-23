@@ -80,6 +80,7 @@ public class MovieActivity extends BaseActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
+        adapter.addFrag(new MovieFragment(), "Movies");
         adapter.addFrag(new TopRatedMoviesFragment(), "Top Rated");
         adapter.addFrag(new PopularMoviesFragment(), "Popular");
         adapter.addFrag(new UpcomingMoviesFragment(), "Upcoming");

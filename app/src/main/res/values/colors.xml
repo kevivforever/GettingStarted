@@ -17,5 +17,8 @@
     <color name="zomato_red">#a40100</color>
     <color name="orange">#FF3909</color>
     <color name="colorAccentDark">#00B482</color>
+    <color name="background">#EFEFEF</color>
+    <color name="placeholder_grey">#AAADC4</color>
+    <color name="placeholder_grey_20">#33AAADC4</color>
 
 </resources>
